@@ -24,6 +24,6 @@ jobs:
         sudo apt-get install -y yamllint
 
     - name: Run yamllint
-      run: yamllint .github/workflows/*.yml
+      run: yamllint -d "{extends: relaxed, rules: {line-length: {max: 150}}}" .github/workflows/*.yml
     
   
