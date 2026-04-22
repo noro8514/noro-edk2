@@ -1,0 +1,29 @@
+# This workflow is a dummy action to lint the workflow files in the .github/workflows directory. 
+# It is triggered on a schedule and can also be triggered manually.
+
+
+name: Dummy Lint
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint Workflow Files
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Install YAML Lint
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y yamllint
+
+    - name: Run yamllint
+      run: yamllint .github/workflows/*.yml
+    
+  
