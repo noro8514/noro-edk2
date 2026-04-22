@@ -1,7 +1,6 @@
 # This workflow is a dummy action to lint the workflow files in the .github/workflows directory. 
 # It is triggered on a schedule and can also be triggered manually.
 
-
 name: Dummy Lint
 
 on:
@@ -24,6 +23,6 @@ jobs:
         sudo apt-get install -y yamllint
 
     - name: Run yamllint
-      run: yamllint -d "{extends: relaxed, rules: {line-length: {max: 150}}}" .github/workflows/*.yml
+      run: yamllint -d relaxed .github/workflows/*.yml
     
   
