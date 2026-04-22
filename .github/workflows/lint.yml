@@ -1,5 +1,5 @@
 # This workflow is a dummy action to lint the workflow files in the .github/workflows directory.
-# It is triggered on a schedule and can also be triggered manually.
+# It is triggered on a psuh to the master branch and can also be triggered manually.
 
 name: Dummy Lint
 
